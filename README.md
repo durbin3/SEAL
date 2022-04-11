@@ -1,1 +1,7 @@
-batch_size=32, dataset='ogbl-ddi', device=0, dropout=0.0, dynamic_train=True, epochs=10, eval_method='Hits@20', eval_steps=1, factor=0.5, hidden_channels=32, l1_strength=0, l2_strength=0.001, lr=0.0001, max_nodes_per_hop=None, node_embedding='GCN', num_hops=1, num_layers=3, patience=20, positional=False, ratio_per_hop=0.2, reverse=False, runs=10, save_best=False, seal=True, stop_early=False, train_percent=1.0, use_feature=False 
+Best Results:
+
+OGBL-DDI Test Score Avg. 0.2625 +- 0.0356, with a training time of 360 seconds per run. 
+
+To replicate, run
+
+python -u main.py --dataset ogbl-ddi --eval_method Hits@20 --epochs 10 --num_layers 3 --hidden_channels 32 --batch_size 32 --lr 0.0001 --l2_strength 0.001 --train_percent 1 --eval_steps 1 --seal --runs 10 --dynamic_train --ratio_per_hop .2  --num_hops 1
